@@ -12,7 +12,7 @@ import Logo from "../assets/logo.svg";
 
 const Navigation = () => (
   <Navbar  expand="lg" variant="dark">
-    <Container fluid>
+    <Container fluid className="px-5">
       <Navbar.Brand href="#home">
         <img
           src={Logo}
@@ -29,7 +29,7 @@ const Navigation = () => (
           <Nav.Link href="#faq">FAQ</Nav.Link>
         </Nav>
         <ButtonGroup aria-label="Basic example">
-          <Button variant="outline-light">
+          <Button variant="outline-light" className="no-line">
             <NavDropdown title="Acessar minha conta" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -42,7 +42,7 @@ const Navigation = () => (
               </NavDropdown.Item>
             </NavDropdown>
           </Button>
-          <Button variant="outline-light">abra sua conta</Button>
+          <Button variant="outline-light" className="no-line">abra sua conta</Button>
         </ButtonGroup>
       </Navbar.Collapse>
     </Container>
