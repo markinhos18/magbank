@@ -1,4 +1,6 @@
+@import "../variables";
+
 .btn-purple{
-    background-color: #820AD1;
-    border-color: #820AD1;
+    background-color: $color-primary !important;
+    border-color: $color-secondary !important;
 }

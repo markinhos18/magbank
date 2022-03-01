@@ -1,0 +1,29 @@
+@import "../variables";
+
+.institutional{
+    background-image: url(https://nubank.com.br/_next/static/images/1783c588df84644447cd8585291274fd-man-with-cellphone-lg@1x.jpg.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+
+    
+    .title-primary{
+        color: $color-third;
+        font-size: 2.2rem;
+        font-weight: 300;
+        line-height: 1.2;
+
+        @media screen and (min-width: 992px) {
+            font-size: 3.5rem;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+}
+
+
+
+.btn-count{
+    width: 15rem !important;
+}
