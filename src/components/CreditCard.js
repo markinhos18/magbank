@@ -15,7 +15,7 @@ const CreditCard = () => (
                 <Row>
                     <Col xs={12} lg={6} className="mb-4">
                         <Row>
-                            <Col xs={2} className="d-flex justify-content-center">
+                            <Col xs={2} className="d-flex justify-content-center align-items-center">
                                 <FontAwesomeIcon icon={faCreditCard} size='2x' color='#820AD1'/>
                             </Col>
                             <Col xs={10} className="h5 text-muted">Crédito Pessoal</Col>
@@ -24,7 +24,7 @@ const CreditCard = () => (
                     </Col>
                     <Col xs={12} lg={6} className="mb-4">
                         <Row>
-                            <Col xs={2} className="d-flex justify-content-center">
+                            <Col xs={2} className="d-flex justify-content-center align-items-center">
                                 <FontAwesomeIcon icon={faMobile} size='2x' color='#820AD1'/>
                             </Col>
                             <Col xs={10} className="h5 text-muted">APP</Col>
@@ -33,7 +33,7 @@ const CreditCard = () => (
                     </Col>
                     <Col xs={12} lg={6} className="mb-4">
                         <Row>
-                            <Col xs={2} className="d-flex justify-content-center">
+                            <Col xs={2} className="d-flex justify-content-center align-items-center">
                                 <FontAwesomeIcon icon={faShoppingCart} size='2x' color='#820AD1'/>
                             </Col>
                             <Col xs={10} className="h5 text-muted">Pagamentos Online</Col>
@@ -42,7 +42,7 @@ const CreditCard = () => (
                     </Col>
                     <Col xs={12} lg={6} className="mb-4">
                         <Row>
-                            <Col xs={2} className="d-flex justify-content-center">
+                            <Col xs={2} className="d-flex justify-content-center align-items-center">
                                 <FontAwesomeIcon icon={faWallet} size='2x' color='#820AD1'/>
                             </Col>
                             <Col xs={10} className="h5 text-muted">Pagamento Digital</Col>
