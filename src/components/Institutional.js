@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreenButton, faMobile, faGlobe, faShield, } from "@fortawesome/free-solid-svg-icons";
 import "./Institutional.scss";
 
-const Institutional = () => (
+const Institutional = ({onClick}) => (
     <section className="institutional py-5">
         <Container>
             <Row>
@@ -43,7 +43,7 @@ const Institutional = () => (
                         <Col xs={11} >Transações mais seguras</Col>
                     </Row>
 
-                    <Button variant="outline-light" className="mt-4">
+                    <Button variant="outline-light" className="mt-4" onClick={onClick}>
                         Abra sua conta
                     </Button>
 

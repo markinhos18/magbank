@@ -36,6 +36,11 @@
         background-color: #3b2e4a;
     }
 
+    .accordion-button::after{
+        background-color: white;
+        border-radius: 10rem;
+    }
+
 
     @media screen and (min-width: 992px) {
         h2{
