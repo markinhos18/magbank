@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from 'react-router-dom';
 import { Container, Row, Col, Button  } from "react-bootstrap";
-import Pagamentos from  '../components/Pagamentos';
-import Extrato  from  '../components/Extrato';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import AccountBalance from "../components/AccountBalance";
+import Pagamentos from  '../components/Pagamentos';
+import Extrato  from  '../components/Extrato';
 
 import "./Dashboard.scss";
 
@@ -36,7 +36,29 @@ const Dashboard = ({ className = false }) => {
             { date: '20/08', description: 'NETFLIX 235236', value: '30,00' },
             { date: '15/08', description: 'FARMÁCIA 12125', value: '350,00' },
         ],
-    };   
+
+        extratoCount: [
+            { date: '17/07', description: 'SAQUE 24h 012345', value: '300,00', saldo: ''  },
+            { date: '17/07', description: 'SUPERMERCADO 02323626', value: '275,00', saldo: '' },
+            { date: '17/07', description: 'SALDO DO DIA', value: '', saldo: '350,00' },
+            { date: '19/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '19/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '19/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '19/07', description: 'SALDO DO DIA', value: '', saldo: '350,00' },
+            { date: '23/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '23/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '23/07', description: 'SALDO DO DIA', value: '', saldo: '350,00' },
+            { date: '30/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '30/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '30/07', description: 'SALDO DO DIA', value: '', saldo: '350,00' },
+            { date: '05/08', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '05/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '05/07', description: 'FARMÁCIA 12125', value: '350,00', saldo: '' },
+            { date: '05/07', description: 'SALDO DO DIA', value: '', saldo: '350,00' },
+        ],
+    }; 
+    
+  
 
     
 
@@ -72,7 +94,7 @@ const Dashboard = ({ className = false }) => {
 
                     <Route path="/" element={<AccountBalance data={data} />}/>
 
-                    <Route path="pagamentos" element={<Pagamentos data={data} />} />
+                    <Route path="pagamentos" element={<Pagamentos />} />
 
                     <Route path="extrato" element={<Extrato data={data} />} />      
  

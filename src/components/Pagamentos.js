@@ -1,82 +1,87 @@
 import React from "react";
-import { Col, Button, Tabs, Tab, Table} from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Col, Button, Tabs, Tab, Form, Row} from 'react-bootstrap';
 
+import './Pagamentos.scss';
 
-const Pagamentos = ({data}) => {
+const Pagamentos = () => (
 
-    const {latestData, futureData} = data;
-
-    return(
+   
         <>
-            <Col xs={12} lg={3} className='mt-lg-5 pt-lg-4'>
-                <h3 className='my-5'>Pagamentos</h3>
-                <h6>
-                    <small>
-                    <strong>Saldo em conta corrente</strong>
-                    </small>
-                </h6>
-                <h4 className='text-success mb-4'>
-                    <small>R$ </small>3.500<small>,00</small>
-                </h4>
-                <h6>
-                    <small>
-                    <strong>Cheque especial</strong>
-                    </small>
-                </h6>
-                <p className='mb-0'>Limite disponível</p>
-                <p className='mb-4'>R$ 5.000,00</p>
-                <Link to='/dashboard/Extrato'>
-                    <Button variant='secondary'>Ver extrato</Button>
-                </Link>
-            </Col>
-            <Col xs={12} lg={5} className='mt-lg-5 pt-lg-5'>
-                <Tabs className='mt-5 pt-lg-5' defaultActiveKey='latest'>
-                    <Tab eventKey='latest' className="table" title='Últimos Lançamentos'>
-                        <Table striped borderless>
-                            <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Descrição</th>
-                                <th>Valor (R$)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {latestData.map(({ date, description, value }) => (
-                                <tr>
-                                <td>{date}</td>
-                                <td>{description}</td>
-                                <td>{value}</td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </Table>
+            <Col xs={12} lg={8} className='mt-lg-5 pt-lg-5'>
+                <h3 className='mt-4 '>Pagamentos</h3>
+                <Tabs className=' pt-lg-5' defaultActiveKey='boleto'>
+                    <Tab eventKey='boleto'  title='Boleto'>
+                        <Form className="form">
+                            <Form.Group className="my-5" controlId="formBarCode" >
+                                <Form.Label>Código de barras</Form.Label>
+                                <Form.Control type="number" placeholder="Insira o código de barras" />
+                            </Form.Group>
+                            <Form.Group className="mb-5" controlId="formPaymentType" key='inline-radio'>
+                                <Form.Label>Forma de Pagamento</Form.Label>
+                                <div className="d-flex">
+                                    <Form.Check 
+                                        type='radio'
+                                        id='debit'
+                                        label='Débito em Corrente'
+                                        name="paymentType"
+                                    />
+                                    <Form.Check 
+                                        type='radio'
+                                        id='credit'
+                                        className='ms-4'
+                                        label='Cartão de Crédito'
+                                        name="paymentType"
+                                    />
+                                </div>
+                            </Form.Group>
+                            <Button className="btn-purple">Continuar</Button>
+                        </Form>
                     </Tab>
-                    <Tab eventKey='future' className="table" title='Lançamentos Futuros'>
-                        <Table striped borderless>
-                            <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Descrição</th>
-                                <th>Valor (R$)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {futureData.map(({ date, description, value }) => (
-                                <tr>
-                                <td>{date}</td>
-                                <td>{description}</td>
-                                <td>{value}</td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </Table>
+                    <Tab eventKey='transfer'  title='Transferência'>
+                        <Form className="form">
+
+                            <Row className="my-5">
+                                <Form.Group as={Col} controlId="formGridCity">
+                                <Form.Label>Banco</Form.Label>
+                                <Form.Control type="number" placeholder="Selecione"/>
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridState">
+                                <Form.Label>Agência</Form.Label>
+                                <Form.Control />
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridZip">
+                                <Form.Label>Conta corrente</Form.Label>
+                                <Form.Control />
+                                </Form.Group>
+                            </Row>
+
+
+                            <Row className="mb-5">
+                                <Form.Group as={Col} controlId="formGridEmail">
+                                <Form.Label>Valor da Transferência</Form.Label>
+                                <Form.Control type="number" />
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridPassword">
+                                <Form.Label>Identificação nos extratos</Form.Label>
+                                <Form.Control />
+                                </Form.Group>
+                            </Row>
+
+                            <Button className="btn-purple" type="submit">
+                                Continuar
+                            </Button>
+                        </Form>
                     </Tab>
+                    
                 </Tabs>
             </Col>
         </>
-    )
 
-};
+    );
+
+
 
 export default Pagamentos;
