@@ -14,6 +14,12 @@ h1 {
   a.dropdown-toggle.nav-link:hover {
     color: black;
   }
+
+  .nav-right {
+    display: flex;
+    gap: 3rem;
+  }
+
 }
 
 .no-line {

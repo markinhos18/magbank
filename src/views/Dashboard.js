@@ -10,7 +10,7 @@ import Extrato  from  '../components/Extrato';
 
 import "./Dashboard.scss";
 
-const Dashboard = ({ className = false }) => {
+const Dashboard = ({ className = false, name, account }) => {
 
     const [ activeLink, setActiveLink ] = useState(0);
 
@@ -75,8 +75,8 @@ const Dashboard = ({ className = false }) => {
                             </span>
                         </Col>
                         <Col xs={9}>
-                            <h3>Marcos Felipe</h3>
-                            <p className="text-muted">ag: 1234 c/c 4321-5</p>
+                            <h3>{name}</h3>
+                            <p className="text-muted">{account}</p>
                         </Col>
                     </Row>
 

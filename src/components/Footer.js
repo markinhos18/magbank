@@ -12,7 +12,7 @@ const Footer = () => (
                 <Col xs={12} lg={4} className="d-flex align-items-center justify-items-center pb-3">
                     <Image src={Logo} width="60"  alt="NuBank logo" />
                 </Col>
-                <Col xs={12} lg={4} className="d-flex align-items-center justify-items-center text-center">
+                <Col xs={12} lg={4} className="d-flex align-items-center justify-items-center  justify-content-center text-center">
                     <p>© 2022  Nu Pagamentos S.A - Instituição de Pagamento.  18.236.120/0001-58<br /> Rua Capote Valente, 39 - São Paulo, SP - 05409-000</p>
                 </Col>
                 <Col xs={12} lg={4}>
